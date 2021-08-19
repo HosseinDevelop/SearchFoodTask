@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import ir.hsh.searchfoodtask.di.component.DaggerNetworkComponent
 import ir.hsh.searchfoodtask.di.component.NetworkComponent
+import ir.hsh.searchfoodtask.di.module.ContextModule
 import ir.hsh.searchfoodtask.di.module.NetworkModule
 
 class App:Application() {
@@ -25,6 +26,7 @@ class App:Application() {
     fun initDaggerComponent():NetworkComponent{
         networkComponent = DaggerNetworkComponent
             .builder()
+            .contextModule(ContextModule(ctx!!))
             .networkModule(NetworkModule("https://cdn.opeqe.com/"))
             .build()
         return  networkComponent
