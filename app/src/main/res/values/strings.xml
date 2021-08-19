@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SearchFoodTask</string>
+    <string name="home">Home</string>
+    <string name="perks">Perks</string>
+    <string name="orders">Orders</string>
+    <string name="account">Account</string>
 </resources>
