@@ -10,10 +10,10 @@ class NetworkViewModel(val networkRepository: NetworkRepository) : ViewModel() {
     var postInfoLiveData: LiveData<List<MenuModelItem>> = MutableLiveData()
 
     init {
-        fetchPostInfoFromRepository()
+        fetchMenuList()
     }
 
-    fun fetchPostInfoFromRepository() {
+    fun fetchMenuList() {
         postInfoLiveData = networkRepository.fetchMenuList()
     }
 }

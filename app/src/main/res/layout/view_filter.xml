@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clipToPadding="true"
+        android:paddingLeft="16dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                app:checkedButton="@id/btnDelivery"
+                android:layout_marginBottom="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:singleSelection="true">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delivery"
+                    app:cornerRadius="18dp"
+                    style="@style/ButtonStyle"
+                    app:icon="@drawable/ic_standing_up_man" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPickup"
+                    style="@style/ButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/pickup"
+                    app:cornerRadius="18dp"
+                    app:icon="@drawable/ic_person_walking" />
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSort"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.7"
+                app:rippleColor="@color/active_filter_tab"
+                android:text="@string/sort"
+                android:textColor="@color/active_filter_tab"
+                app:cornerRadius="18dp"
+                app:icon="@drawable/ic_baseline_sort_24"
+                app:iconTint="@color/active_filter_tab"
+                app:layout_constraintStart_toEndOf="@+id/toggleButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPerks"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="2dp"
+                app:rippleColor="@color/active_filter_tab"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="2dp"
+                android:layout_weight="0.7"
+                android:text="@string/perks"
+                android:textColor="@color/active_filter_tab"
+                app:cornerRadius="18dp"
+                app:icon="@drawable/ic_diamond_shape"
+                app:iconTint="@color/active_filter_tab"
+                app:layout_constraintStart_toEndOf="@+id/btnSort"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+</LinearLayout>

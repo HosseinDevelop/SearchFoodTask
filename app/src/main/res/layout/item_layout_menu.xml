@@ -32,9 +32,9 @@
         <ImageView
             android:id="@+id/imgCover"
             android:layout_width="match_parent"
-            android:layout_height="220dp"
+            android:layout_height="150dp"
             android:layout_weight="1"
-            android:background="@color/design_default_color_primary"
+            android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

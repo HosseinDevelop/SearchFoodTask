@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import ir.hsh.searchfoodtask.App
 import ir.hsh.searchfoodtask.data.model.MenuModelItem
-import ir.hsh.searchfoodtask.di.component.NetworkComponent
+import ir.hsh.searchfoodtask.di.component.AppComponent
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,13 +14,13 @@ import javax.inject.Inject
 
 class NetworkRepository @Inject constructor(private val retrofit: Retrofit) {
 
-    lateinit var networkComponent: NetworkComponent
+    lateinit var appComponent: AppComponent
 
     var menuList: MutableLiveData<List<MenuModelItem>> = MutableLiveData()
 
     init {
-        var networkComponent: NetworkComponent = App.networkComponent
-        networkComponent.inject(this)
+        var appComponent: AppComponent = App.appComponent
+        appComponent.inject(this)
     }
 
     fun fetchMenuList(): LiveData<List<MenuModelItem>> {

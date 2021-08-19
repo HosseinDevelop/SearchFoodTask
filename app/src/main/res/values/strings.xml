@@ -4,4 +4,7 @@
     <string name="perks">Perks</string>
     <string name="orders">Orders</string>
     <string name="account">Account</string>
+    <string name="sort">Sort</string>
+    <string name="pickup">Pickup</string>
+    <string name="delivery">Delivery</string>
 </resources>

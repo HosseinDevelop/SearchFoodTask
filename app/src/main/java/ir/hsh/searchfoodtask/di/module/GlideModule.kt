@@ -15,11 +15,11 @@ class GlideModule() {
 
     @Singleton
     @Provides
-    fun getGlide(context: Context): RequestBuilder<Drawable> {
+    fun provideGlide(context: Context): RequestBuilder<Drawable> {
         return Glide.with(context)
             .asDrawable()
-            .placeholder(R.drawable.ic_launcher_background)
-            .error(R.drawable.ic_launcher_foreground)
+            .placeholder(R.drawable.place_holder)
+            //.error(R.drawable.ic_launcher_foreground)
             .centerCrop()
             //.transform(CenterCrop(), CircleCrop())
             .diskCacheStrategy(DiskCacheStrategy.ALL)

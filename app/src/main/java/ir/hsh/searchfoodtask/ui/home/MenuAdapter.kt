@@ -14,8 +14,8 @@ import javax.inject.Inject
 class MenuAdapter @Inject constructor(val context: Context, private val glide: RequestBuilder<Drawable>) : RecyclerView.Adapter<MenuAdapter.MainViewHolder>() {
 
     private var data: List<MenuModelItem> = ArrayList()
-    private lateinit var click: (id: Int?, title: String) -> Unit
-    fun setOnClick(click: (id: Int?, title: String) -> Unit) {
+    private lateinit var click: (id: String?, title: String) -> Unit
+    fun setOnClick(click: (id: String?, title: String) -> Unit) {
         this.click = click
     }
 
@@ -35,14 +35,17 @@ class MenuAdapter @Inject constructor(val context: Context, private val glide: R
 
     inner class MainViewHolder(val binding: ItemLayoutMenuBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: MenuModelItem, position: Int) = with(itemView) {
-            binding.txtTitle.text = item.title
-            binding.txtRate.text = item.rate.toString()
-            binding.txtPrice.text = "$${item.price} delivery"
-            binding.txtPreparation.text = "$${item.preparation} min"
-            glide.load(item.image)
-                .into(binding.imgCover)
+
+            binding.apply {
+                txtTitle.text = item.title
+                txtRate.text = item.rate.toString()
+                txtPrice.text = "$${item.price} delivery"
+                txtPreparation.text = "${item.preparation} min"
+                glide.load(item.image)
+                    .into(imgCover)
+            }
             setOnClickListener {
-                //click(item.id?.toInt(), item.title.toString())
+                click(item.id, item.title.toString())
             }
         }
     }
