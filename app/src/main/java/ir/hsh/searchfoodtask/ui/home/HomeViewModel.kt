@@ -15,7 +15,7 @@ class HomeViewModel @Inject constructor(val networkRepository: NetworkRepository
         fetchMenuList()
     }
 
-    fun fetchMenuList() {
+   private fun fetchMenuList() {
         postInfoLiveData = networkRepository.fetchMenuList()
     }
 

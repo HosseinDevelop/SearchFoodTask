@@ -13,7 +13,7 @@ class NetworkViewModel(val networkRepository: NetworkRepository) : ViewModel() {
         fetchMenuList()
     }
 
-    fun fetchMenuList() {
+    private fun fetchMenuList() {
         postInfoLiveData = networkRepository.fetchMenuList()
     }
 }

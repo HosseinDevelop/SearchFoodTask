@@ -8,10 +8,7 @@ import ir.hsh.searchfoodtask.data.viewmodel.NetworkViewModelFactory
 import ir.hsh.searchfoodtask.di.module.GlideModule
 import ir.hsh.searchfoodtask.di.module.NetworkModule
 import ir.hsh.searchfoodtask.di.module.ViewModelModule
-import ir.hsh.searchfoodtask.di.module.ViewPagerModule
 import ir.hsh.searchfoodtask.ui.home.HomeFragment
-import ir.hsh.searchfoodtask.ui.main.MainActivity
-import ir.hsh.searchfoodtask.ui.main.MainPagerAdapter
 import retrofit2.Retrofit
 import javax.inject.Singleton
 

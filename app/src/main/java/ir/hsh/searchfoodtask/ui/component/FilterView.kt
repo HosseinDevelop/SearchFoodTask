@@ -2,7 +2,6 @@ package ir.hsh.searchfoodtask.ui.component
 
 import android.content.Context
 import android.os.Build
-import android.text.Html
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.LinearLayout
@@ -35,6 +34,33 @@ class FilterView : LinearLayout {
         binding = ViewFilterBinding.inflate(LayoutInflater.from(context), this, true)
 
 
+    }
+
+    fun onDeliveryClick(click: () -> Unit) {
+        binding.btnDelivery.setOnClickListener {
+            click()
+        }
+
+    }
+
+    fun onPickupClick(click: () -> Unit) {
+        binding.btnPickup.setOnClickListener {
+            click()
+        }
+
+    }
+
+    fun onSortClick(click: () -> Unit) {
+        binding.btnSort.setOnClickListener {
+            click()
+        }
+
+    }
+
+    fun onPerksClick(click: () -> Unit) {
+        binding.btnPerks.setOnClickListener {
+            click()
+        }
 
     }
 
